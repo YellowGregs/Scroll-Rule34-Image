@@ -1,0 +1,108 @@
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 15px;
+  animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  57% { color: blue; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+
+#posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post {
+  flex-basis: calc(33.33% - 20px);
+  margin: 10px;
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.post-image img, .post-image video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.post-image:hover img, .post-image:hover video {
+  transform: scale(1.1);
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #3366cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-download:hover {
+  background-color: #254e9b;
+}
+
+.post-info {
+  padding: 10px;
+}
+
+.infinite-scroll-error {
+  color: red;
+  margin-top: 20px;
+}
